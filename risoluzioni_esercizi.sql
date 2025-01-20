@@ -25,4 +25,9 @@ ORDER BY numero_fattura ASC;
 SELECT COUNT(*), EXTRACT(YEAR FROM data_fattura) AS anno
 FROM fatture
 WHERE fatture.iva = 20.0
+GROUP BY anno;
+
+/*Esercizio 8*/
+SELECT COUNT(*), EXTRACT(YEAR FROM data_fattura) AS anno, SUM(importo) AS totale
+FROM fatture
 GROUP BY anno
