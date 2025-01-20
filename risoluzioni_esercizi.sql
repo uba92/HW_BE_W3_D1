@@ -14,3 +14,9 @@ ON id_cliente = numero_cliente
 WHERE importo < 1000
 ORDER BY numero_fattura ASC;
 
+/*Esercizio 6*/
+SELECT fatture.numero_fattura, fatture.importo, fatture.iva, fatture.data_fattura, fornitori.denominazione
+FROM fatture
+INNER JOIN fornitori
+ON fatture.numero_fornitore = fornitori.numero_fornitore
+ORDER BY numero_fattura ASC;
