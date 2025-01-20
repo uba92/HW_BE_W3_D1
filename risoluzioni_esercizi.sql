@@ -20,3 +20,9 @@ FROM fatture
 INNER JOIN fornitori
 ON fatture.numero_fornitore = fornitori.numero_fornitore
 ORDER BY numero_fattura ASC;
+
+/*Esercizio 7*/
+SELECT COUNT(*), EXTRACT(YEAR FROM data_fattura) AS anno
+FROM fatture
+WHERE fatture.iva = 20.0
+GROUP BY anno
